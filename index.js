@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 18;
 
+if(votingAge >= 18){
+ console.log(true);
+}
 
 
 /*
@@ -30,8 +34,12 @@ Do the following:
 
    HINT: no function required
 */
+let tiger = "scary";
+let ghost = "spooky";
 
-
+if(ghost === "spooky") {
+  console.log(tiger = "scared");
+}
 
 
 
@@ -45,7 +53,12 @@ Do the following:
 
    HINT: look up the Number method
 */
+let date = "1999";
 
+if (date === "1999") {
+  let date = 1999;
+  console.log(date);
+}
 
 
 
@@ -58,10 +71,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
-
+console.log(multiply(4, 5));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,10 +87,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
-
+console.log(dogYears());
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,8 +120,22 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+    if(age < .33){
+      return weight * .10;
+    } else if (age <= .58) {
+      return weight * .05;
+    } else if (age < 1) {
+      return weight * .04;
+    } else if (age > 1 && weight <= 5) {
+    return weight * .05;
+    } else if (age > 1 && weight <= 10) {
+      return weight * .04;
+    } else if (age > 1 && weight <= 15) {
+      return weight * .03;
+    } else {
+      return weight * .02;
+    }
   }
 
 
@@ -133,9 +160,28 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random();
+
+if(computer <= 0.34) {
+  computer = "rock";
+} else if(computer <= 0.67) {
+  computer = "paper";
+} else if(computer > 0.67) {
+  computer = "scissors";
+}
 
 function game(user, computer){
-    /*add your code here*/
+    if(user === computer) {
+      return "it's a tie";
+    } else if(user === "rock" && computer === "scissors") {
+      return "you win!";
+    } else if(user === "scissors" && computer === "paper") {
+      return "you win!";
+    } else if(user === "paper" && computer === "rock") {
+      return "you win!";
+    } else {
+      return "you lose";
+    }
 }
   
   
