@@ -121,21 +121,16 @@ Use the hungryDog function and feeding requirements below to do the following:
 */  
 
 function hungryDog(weight, age){
-    if(age < .33){
-      return weight * .10;
-    } else if (age <= .58) {
-      return weight * .05;
-    } else if (age < 1) {
-      return weight * .04;
-    } else if (age > 1 && weight <= 5) {
-    return weight * .05;
-    } else if (age > 1 && weight <= 10) {
-      return weight * .04;
-    } else if (age > 1 && weight <= 15) {
-      return weight * .03;
-    } else {
-      return weight * .02;
-    }
+  if(age < 1) {
+    if(age < 4/12){return weight * .10;}
+    if(age >= 4/12 && age < 7/12) {return weight * .05;}
+    if(age >= 7/12) {return weight * .04}
+  } else {
+    if(weight <= 5) {return weight * .05;}
+    if(weight > 5 && weight <= 10){return weight * .04;}
+    if(weight > 10 && weight <= 15) {return weight * .03}
+    if(weight > 15) {return weight * .02;}
+  }
   }
 
 
@@ -180,7 +175,7 @@ function game(user, computer){
     } else if(user === "paper" && computer === "rock") {
       return "you win!";
     } else {
-      return "you lose";
+      return "you lose!";
     }
 }
   
@@ -197,8 +192,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(KM){
+    let miles = KM * 0.621371;
+    return miles;
   }
 
 
@@ -211,8 +207,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(CM){
+    return CM / 30.48;
   }
  
 
@@ -227,8 +223,13 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+        while(number > 0) {
+          let numberLeftOver = number - 1;
+          return number + " bottles of soda on the wall, " + number + " bottles of soda, take one down pass it around " + numberLeftOver+ " bottles of soda on the wall";
+          number--
+
+        }
   }
 
 
@@ -247,8 +248,18 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if(score >= 90) {
+    return "you got an A";
+  } else if (score >= 80) {
+    return "you got a B";
+  } else if (score >= 70) {
+    return "you got a C";
+  } else if (score >= 60) {
+    return "you got a D";
+  } else {
+    return "you got an F";
+  }
   }
   
   
